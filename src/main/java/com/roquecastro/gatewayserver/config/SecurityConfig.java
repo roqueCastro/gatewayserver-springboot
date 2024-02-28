@@ -20,14 +20,15 @@ public class SecurityConfig {
 	
 	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
-		http.authorizeExchange(exchanges -> exchanges
-				.pathMatchers("/applications/apihotel/**").hasRole("HOTELS")
-				.pathMatchers("/applications/apirooms/**").authenticated()
-				.pathMatchers("/applications/apireservations/**").permitAll()
-			).oauth2ResourceServer().jwt().jwtAuthenticationConverter(grantedAutorities());
-		
-		http.csrf().disable();
-		
+//		http.authorizeExchange(exchanges -> exchanges
+//				.pathMatchers("/applications/apihotel/**").hasRole("HOTELS")
+////				.pathMatchers("/applications/apihotel/**").permitAll()
+//				.pathMatchers("/applications/apirooms/**").authenticated()
+//				.pathMatchers("/applications/apireservations/**").permitAll()
+//			).oauth2ResourceServer().jwt().jwtAuthenticationConverter(grantedAutorities());
+//		
+//		http.csrf().disable();
+//		
 		return http.build();
 	}
 	
